@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<ul id="t3">
+    <button id="btn1">1-1</button>
+</ul>
+
+
+<script src="https://code.jquery.com/jquery-3.6.4.js"></script>
+
+<script type="text/javascript">
+    $(function () {
+        console.log("Hi");
+        $("#btn1").bind("click", btn1OnClick);
+        $("#btn1").hover(btnOnHoverIn, btnOnHoverOut);
+    });
+
+    $("#t3").empty();
+    for (var i = 0; i < 7; i++) {
+        for (var j = 0; j < 4; j++) {
+            $("#t3").append("<button>" + (i + 1) + "-" + (j + 1) + "</button>");
+        }
+        $("#t3").append("<br/>");
+    };
+
+    function btn1OnClick() {
+        console.log("click");
+    }
+
+    function btnOnHoverIn() {
+        console.log("on it");
+    }
+
+    function btnOnHoverOut() {
+        console.log("out");
+    }
+
+
+</script>
+</body>
+</html>
