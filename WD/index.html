@@ -41,6 +41,37 @@
     }
 
 
+    $(function () {
+        CallAPI("隨便拉")
+    });
+
+    function CallAPI(addr) {
+        console.log("call...");
+
+
+        var url = "http://zip5.5432.tw/zip5apijson.py?adrs=" + addr;
+        console.log(url); //for debug
+        $.ajax({
+            url: url,
+            dataType: "json",
+            type: "get",
+            //data: data,
+            //Type: Function(Anything data, String textStatus, jqXHR jqXHR)
+            success: function (data, textStatus, jqXHR) {
+                console.log(JSON.stringify(data));
+                console.log(data.zipcode6);
+            },
+            //Type: Function(jqXHR jqXHR, String textStatus, String errorThrown)
+            error: function (jqXHR, textStatus, errorThrown) {
+
+            }
+        });
+
+        console.log("call...END");
+    }
+
+
+
 </script>
 </body>
 </html>
